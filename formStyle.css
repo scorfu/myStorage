@@ -16,9 +16,13 @@ h1{
     text-align: center;
 }
 
+hr {
+    max-width: 10px;
+}
+
 #search{
     border-radius: 300px;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 input{
@@ -44,5 +48,5 @@ input{
 }
 
 .btn-xl{
-	padding: 1rem 2rem;
+	padding: .8rem 1.8rem;
 }
