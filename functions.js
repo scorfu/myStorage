@@ -14,6 +14,8 @@ function getObjHtml(object){
     return  `<tr>
     <td>${object.nameObj}</td>
     <td>${object.category}</td>
+    <td>${object.depositArea}</td>
+    <td>${object.depositDate}</td>
 </tr>`;
 }
 
