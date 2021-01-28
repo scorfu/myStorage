@@ -1,6 +1,18 @@
 [
     {
-        "name":"",
-        "category":""
+        "nameObj":"facturi",
+        "category":"acte"
+    },
+    {
+        "nameObj":"surubelnita",
+        "category":"scule"
+    },
+    {
+        "nameObj":"papuci",
+        "category":"incaltaminte"
+    },
+    {
+        "nameObj":"minge",
+        "category":"jucarii"
     }
 ]
