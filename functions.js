@@ -7,10 +7,7 @@ function insertObj(object){
 }
 
 function getObjsHtml(object){
-    var rHtml = object.map(objects => {
-        return getObjHtml(objects)
-    });
-    return rHtml.join("");
+    return object.map(getObjHtml).join("");
 }
 
 function getObjHtml(object){
