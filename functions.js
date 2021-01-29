@@ -1,6 +1,5 @@
 console.log('test script')
 
-
 function insertObj(object){
     const tbody = document.querySelector('#list tbody');
     tbody.innerHTML = getObjsHtml(object);
