@@ -1,6 +1,26 @@
 [
     {
-        "name":"",
-        "category":""
+        "nameObj":"facturi",
+        "category":"Documents",
+        "depositArea":"Living",
+        "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"surubelnita",
+        "category":"Tools",
+        "depositArea":"Kitchen",
+        "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"sandale",
+        "category":"Clothes and footwear",
+        "depositArea":"Hallway",
+        "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"minge",
+        "category":"Toys",
+        "depositArea":"Dormroom",
+        "depositDate":"01.01.2021"
     }
 ]
