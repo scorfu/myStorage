@@ -46,3 +46,17 @@ function addEventListeners() {
 }
 
 addEventListeners();
+
+function saveObj () {
+    const nameObj = document.querySelector("#list input[name=nameObj]").value;
+    const category = document.querySelector("#category option:checked").value;
+    const depositArea = document.querySelector("#depositArea option:checked").value;
+    const depositDate = document.querySelector("#list input[name=depositDate]").value;
+    console.log("saving", nameObj, category, depositArea, depositDate)
+};
+
+const saveBtn = document.querySelector("#saveBtn");
+saveBtn.addEventListener("click", () => {
+    saveObj();
+    
+})
