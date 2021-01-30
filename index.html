@@ -31,7 +31,20 @@
                     <input type="text" placeholder="Enter name" name="Name">
                 </td>
                 <td>
-                    <input type="text" placeholder="Enter category" name="Category">
+                    <!-- <input type="text" placeholder="Enter category" name="Category"> -->
+                    <form action="/data.json">
+                        <label for="Category">Choose a category:</label>
+                        <select name="Category" id="category">
+                          <option value="Documents">Documents</option>
+                          <option value="Tools">Tools</option>
+                          <option value="Clothes and footwear">Clothes and footwear</option>
+                          <option value="Toys">Toys</option>
+                          <option value="Kitchen appliances">Kitchen appliances</option>
+                          <option value="Tech">Tech</option>
+                          <option value="Summer vacation">Summer vacation</option>
+                          <option value="Winter vacation">Winter vacation</option>
+                          <option value="Others">Others</option>
+                        </select>
                 </td>
                 <td>
                     <!-- <input type="text" placeholder="Deposit area" name="Area"> -->
@@ -46,6 +59,7 @@
                           <option value="Garage">Garage</option>
                           <option value="Attic">Attic</option>
                           <option value="Basement">Basement</option>
+                          <option value="Others">Others</option>
                         </select>
 
                 </td>
