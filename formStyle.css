@@ -20,11 +20,6 @@ hr {
     max-width: 10px;
 }
 
-#search{
-    border-radius: 300px;
-    font-size: 1.8rem;
-}
-
 input{
     opacity:.5;
 }

@@ -22,5 +22,17 @@
         "category":"Toys",
         "depositArea":"Dormroom",
         "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"sticla",
+        "category":"Bottles",
+        "depositArea":"Kitchen",
+        "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"macbook",
+        "category":"Laptops",
+        "depositArea":"Office",
+        "depositDate":"01.01.2021"
     }
 ]

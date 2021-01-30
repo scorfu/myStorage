@@ -1,3 +1,7 @@
+html {
+  background-color: whitesmoke;
+}
+
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -11,14 +15,14 @@ body {
 #list th,#list td {
     text-align: left;
     padding: 8px;
-    border: 1px solid #15d4c6;
+    border: 1px solid beige;
 }
   
-#list tr:nth-child(even){background-color: #f2f2f2}
+#list tr:nth-child(even){background-color: floralwhite}
 
 th {
-    background-color:  #15d4c6;
-    color: white;
+    background-color:  burlywood;
+    color: black;
   }
   
 td input {
@@ -27,5 +31,5 @@ td input {
   }
 
 #list td{
-   border: 1px solid #15d4c6;
+   border: 1px solid beige;
 }
