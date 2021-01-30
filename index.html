@@ -22,6 +22,7 @@
                 <th>Category</th>
                 <th>Deposit Area</th>
                 <th>Date deposited</th>
+                <th></th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -31,10 +32,40 @@
                     <input type="text" placeholder="Enter name" name="Name">
                 </td>
                 <td>
-                    <input type="text" placeholder="Enter category" name="Category">
+                    <!-- <input type="text" placeholder="Enter category" name="Category"> -->
+                    <form action="/data.json">
+                        <label for="Category">Choose a category:</label>
+                        <select name="Category" id="category">
+                          <option value="Documents">Documents</option>
+                          <option value="Tools">Tools</option>
+                          <option value="Clothes and footwear">Clothes and footwear</option>
+                          <option value="Toys">Toys</option>
+                          <option value="Kitchen appliances">Kitchen appliances</option>
+                          <option value="Tech">Tech</option>
+                          <option value="Summer vacation">Summer vacation</option>
+                          <option value="Winter vacation">Winter vacation</option>
+                          <option value="Others">Others</option>
+                        </select>
                 </td>
                 <td>
-                    <input type="text" placeholder="Deposit area" name="Area">
+                    <!-- <input type="text" placeholder="Deposit area" name="Area"> -->
+                    <form action="/data.json">
+                        <label for="depositArea">Choose a deposit space:</label>
+                        <select name="depositArea" id="depositArea">
+                          <option value="Living">Living</option>
+                          <option value="Kitchen">Kitchen</option>
+                          <option value="Office">Office</option>
+                          <option value="Hallway">Hallway</option>
+                          <option value="Dormroom">Dormroom</option>
+                          <option value="Garage">Garage</option>
+                          <option value="Attic">Attic</option>
+                          <option value="Basement">Basement</option>
+                          <option value="Others">Others</option>
+                        </select>
+
+                </td>
+                <td>
+                    <input type="date" placeholder="Date deposited" name="deposited">
                 </td>
                 <td>
                     <button>Save</button>

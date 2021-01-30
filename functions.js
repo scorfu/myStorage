@@ -41,8 +41,8 @@ function addEventListeners() {
     search.addEventListener("input", e => {
         const text = e.target.value;
         const filtrate = searchObjs(text);
-        console.info({ filtrate })
         insertObj(filtrate);
     });
 }
+
 addEventListeners();
