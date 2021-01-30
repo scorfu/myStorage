@@ -34,5 +34,23 @@
         "category":"Tech",
         "depositArea":"Office",
         "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"Beach ball",
+        "category":"Summer Vacation",
+        "depositArea":"Attic",
+        "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"Skates",
+        "category":"Winter Vacation",
+        "depositArea":"Basement",
+        "depositDate":"01.01.2021"
+    },
+    {
+        "nameObj":"Jack",
+        "category":"Tools",
+        "depositArea":"Garage",
+        "depositDate":"01.01.2021"
     }
 ]

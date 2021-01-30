@@ -28,11 +28,11 @@
         <tfoot>
             <tr>
                 <td>
-                    <input type="text" placeholder="Enter name" name="Name">
+                    <input type="text" placeholder="Enter name" name="nameObj">
                 </td>
                 <td>
                     <!-- <input type="text" placeholder="Enter category" name="Category"> -->
-                    <form action="/data.json">
+                    <form action='', name="Category">
                         <label for="Category">Choose a category:</label>
                         <select name="Category" id="category">
                           <option value="Documents">Documents</option>
@@ -48,7 +48,7 @@
                 </td>
                 <td>
                     <!-- <input type="text" placeholder="Deposit area" name="Area"> -->
-                    <form action="/data.json">
+                    <form action="", name="depositArea">
                         <label for="depositArea">Choose a deposit space:</label>
                         <select name="depositArea" id="depositArea">
                           <option value="Living">Living</option>
@@ -64,10 +64,10 @@
 
                 </td>
                 <td>
-                    <input type="date" placeholder="Date deposited" name="deposited">
+                    <input type="date" placeholder="Date deposited" name="depositDate">
                 </td>
                 <td>
-                    <button>Save</button>
+                    <button id="saveBtn">Save</button>
                 </td>
             </tr>
         </tfoot>
