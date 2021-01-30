@@ -1,53 +1,62 @@
 [
     {
+        "id": "asd",
         "nameObj":"facturi",
         "category":"Documents",
         "depositArea":"Living",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "qwe",
         "nameObj":"surubelnita",
         "category":"Tools",
         "depositArea":"Kitchen",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "zxc",
         "nameObj":"sandale",
         "category":"Clothes and footwear",
         "depositArea":"Hallway",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "wer",
         "nameObj":"minge",
         "category":"Toys",
         "depositArea":"Dormroom",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "sdf",
         "nameObj":"sticla",
         "category":"Kitchen appliances",
         "depositArea":"Kitchen",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "xcv",
         "nameObj":"macbook",
         "category":"Tech",
         "depositArea":"Office",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "ert",
         "nameObj":"Beach ball",
         "category":"Summer Vacation",
         "depositArea":"Attic",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "dfg",
         "nameObj":"Skates",
         "category":"Winter Vacation",
         "depositArea":"Basement",
         "depositDate":"01.01.2021"
     },
     {
+        "id": "cvb",
         "nameObj":"Jack",
         "category":"Tools",
         "depositArea":"Garage",
