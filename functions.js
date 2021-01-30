@@ -45,4 +45,5 @@ function addEventListeners() {
         insertObj(filtrate);
     });
 }
+
 addEventListeners();
