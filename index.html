@@ -34,10 +34,23 @@
                     <input type="text" placeholder="Enter category" name="Category">
                 </td>
                 <td>
-                    <input type="text" placeholder="Deposit area" name="Area">
+                    <!-- <input type="text" placeholder="Deposit area" name="Area"> -->
+                    <form action="/data.json">
+                        <label for="depositArea">Choose a deposit space:</label>
+                        <select name="depositArea" id="depositArea">
+                          <option value="Living">Living</option>
+                          <option value="Kitchen">Kitchen</option>
+                          <option value="Office">Office</option>
+                          <option value="Hallway">Hallway</option>
+                          <option value="Dormroom">Dormroom</option>
+                          <option value="Garage">Garage</option>
+                          <option value="Attic">Attic</option>
+                          <option value="Basement">Basement</option>
+                        </select>
+
                 </td>
                 <td>
-                    <input type="text" placeholder="Date deposited" name="deposited">
+                    <input type="date" placeholder="Date deposited" name="deposited">
                 </td>
                 <td>
                     <button>Save</button>

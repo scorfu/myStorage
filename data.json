@@ -25,13 +25,13 @@
     },
     {
         "nameObj":"sticla",
-        "category":"Bottles",
+        "category":"Kitchen appliances",
         "depositArea":"Kitchen",
         "depositDate":"01.01.2021"
     },
     {
         "nameObj":"macbook",
-        "category":"Laptops",
+        "category":"Tech",
         "depositArea":"Office",
         "depositDate":"01.01.2021"
     }
