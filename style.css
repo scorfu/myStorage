@@ -32,7 +32,10 @@ html {
 }
 
 header {
-  background: #2871E8;
+  background:linear-gradient( 
+    130deg
+     ,#ff7a18,#af002d 41.07%,#319197 76.05%);;
+     color: wheat;
 }
 
 h1{
@@ -54,8 +57,8 @@ h1{
 #list tr:nth-child(even){background-color: floralwhite}
 
 th {
-    background-color:  #2871E8;
-    color: black;
+    background-color:#ff7a18;
+    color: wheat;
   }
   
 td input {
