@@ -32,7 +32,9 @@ html {
 }
 
 header {
-  background:#F67026;
+  background:linear-gradient( 
+    130deg
+     ,#ff7a18,#af002d 41.07%,#319197 76.05%);;
 }
 
 h1{
@@ -54,7 +56,7 @@ h1{
 #list tr:nth-child(even){background-color: floralwhite}
 
 th {
-    background-color:#F67026;
+    background-color:#ff7a18;
     color: black;
   }
   
