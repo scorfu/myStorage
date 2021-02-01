@@ -44,12 +44,9 @@ function loadList() {
     fetch(API.READ.URL)
     .then(r => r.json())
     .then(data => {
-        allObjs = data
         insertObj(data);
     });
 }
-
-loadList();
 
 let allObjs = [];
 
@@ -69,8 +66,6 @@ function addEventListeners() {
         insertObj(filtrate);
     });
 }
-
-addEventListeners();
 
 function saveObj () {
     const nameObj = document.querySelector("#list input[name=nameObj]").value;
@@ -104,4 +99,6 @@ saveBtn.addEventListener("click", () => {
     saveObj();
     
 })
-console.log("test nou stancuta")
+
+loadList();
+addEventListeners();
