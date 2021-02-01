@@ -32,7 +32,7 @@ html {
 }
 
 header {
-  background: burlywood;
+  background: #2871E8;
 }
 
 h1{
@@ -54,7 +54,7 @@ h1{
 #list tr:nth-child(even){background-color: floralwhite}
 
 th {
-    background-color:  burlywood;
+    background-color:  #2871E8;
     color: black;
   }
   
