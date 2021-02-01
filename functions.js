@@ -104,4 +104,4 @@ saveBtn.addEventListener("click", () => {
     saveObj();
     
 })
-console.log("test")
+console.log("test nou")
