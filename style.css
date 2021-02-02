@@ -110,14 +110,20 @@ html {
 
 .placeholders {
   border-radius: 300px;
+  margin: 1px;
+  padding-left: 5px;
 }
 
 #depositArea {
   border-radius: 300px;
+  margin: 1px;
+  padding-left: 3px;
 }
 
 #category {
   border-radius: 300px;
+  margin: 1px;
+  padding-left: 3px;
 }
 
 header {
