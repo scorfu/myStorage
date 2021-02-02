@@ -3,11 +3,22 @@
 
 <head>
     <title>My Storage</title>
+
+    <!--Meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
+    <!--Bootstrap links-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!--Our css stylesheet-->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,92 +33,92 @@
             <div style="margin-bottom: 5px;">
                 <input type='text' id='search' placeholder="Quick Search" autocomplete="off">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle btn-md" data-bs-toggle="dropdown" aria-expanded="false">
-                      Filter
+                    <button type="button" class="btn btn-danger dropdown-toggle btn-md" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Filter
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Documents</a></li>
-                      <li><a class="dropdown-item" href="#">Tools</a></li>
-                      <li><a class="dropdown-item" href="#">Clothes and footwear</a></li>
-                      <li><a class="dropdown-item" href="#">Toys</a></li>
-                      <li><a class="dropdown-item" href="#">Kitchen appliances</a></li>
-                      <li><a class="dropdown-item" href="#">Tech</a></li>
-                      <li><a class="dropdown-item" href="#">Summer vacation</a></li>
-                      <li><a class="dropdown-item" href="#">Winter vacation</a></li>
-                      <li><a class="dropdown-item" href="#">Others</a></li>
+                        <li><a class="dropdown-item" href="#">Documents</a></li>
+                        <li><a class="dropdown-item" href="#">Tools</a></li>
+                        <li><a class="dropdown-item" href="#">Clothes and footwear</a></li>
+                        <li><a class="dropdown-item" href="#">Toys</a></li>
+                        <li><a class="dropdown-item" href="#">Kitchen appliances</a></li>
+                        <li><a class="dropdown-item" href="#">Tech</a></li>
+                        <li><a class="dropdown-item" href="#">Summer vacation</a></li>
+                        <li><a class="dropdown-item" href="#">Winter vacation</a></li>
+                        <li><a class="dropdown-item" href="#">Others</a></li>
                     </ul>
-                  </div>
+                </div>
             </div>
-            
+
         </div>
     </header>
 
-<section id="content">
-    <table id="list">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Deposit Area</th>
-                <th>Date deposited</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot>
-            <tr>
-                <td>
-                    <input type="text" placeholder="Enter name" name="nameObj">
-                </td>
-                <td>
-                    <!-- <input type="text" placeholder="Enter category" name="Category"> -->
-                    <form action='#', name="Category">
-                        <label for="Category">Choose a category:</label>
-                        <select name="Category" id="category">
-                            <option value="Documents">Documents</option>
-                            <option value="Tools">Tools</option>
-                            <option value="Clothes and footwear">Clothes and footwear</option>
-                            <option value="Toys">Toys</option>
-                            <option value="Kitchen appliances">Kitchen appliances</option>
-                            <option value="Tech">Tech</option>
-                            <option value="Summer vacation">Summer vacation</option>
-                            <option value="Winter vacation">Winter vacation</option>
-                            <option value="Others">Others</option>
-                        </select>
-                </td>
-                <td>
-                    <!-- <input type="text" placeholder="Deposit area" name="Area"> -->
-                    <form action="#", name="depositArea">
-                        <label for="depositArea">Choose a deposit space:</label>
-                        <select name="depositArea" id="depositArea">
-                            <option value="Living">Living</option>
-                            <option value="Kitchen">Kitchen</option>
-                            <option value="Office">Office</option>
-                            <option value="Hallway">Hallway</option>
-                            <option value="Dormroom">Dormroom</option>
-                            <option value="Garage">Garage</option>
-                            <option value="Attic">Attic</option>
-                            <option value="Basement">Basement</option>
-                            <option value="Others">Others</option>
-                        </select>
+    <section id="content">
+        <table id="list">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Deposit Area</th>
+                    <th>Date deposited</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Enter name" name="nameObj">
+                    </td>
+                    <td>
+                        <!-- <input type="text" placeholder="Enter category" name="Category"> -->
+                        <form action='#' , name="Category">
+                            <label for="Category">Choose a category:</label>
+                            <select name="Category" id="category">
+                                <option value="Documents">Documents</option>
+                                <option value="Tools">Tools</option>
+                                <option value="Clothes and footwear">Clothes and footwear</option>
+                                <option value="Toys">Toys</option>
+                                <option value="Kitchen appliances">Kitchen appliances</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Summer vacation">Summer vacation</option>
+                                <option value="Winter vacation">Winter vacation</option>
+                                <option value="Others">Others</option>
+                            </select>
+                    </td>
+                    <td>
+                        <!-- <input type="text" placeholder="Deposit area" name="Area"> -->
+                        <form action="#" , name="depositArea">
+                            <label for="depositArea">Choose a deposit space:</label>
+                            <select name="depositArea" id="depositArea">
+                                <option value="Living">Living</option>
+                                <option value="Kitchen">Kitchen</option>
+                                <option value="Office">Office</option>
+                                <option value="Hallway">Hallway</option>
+                                <option value="Dormroom">Dormroom</option>
+                                <option value="Garage">Garage</option>
+                                <option value="Attic">Attic</option>
+                                <option value="Basement">Basement</option>
+                                <option value="Others">Others</option>
+                            </select>
 
-                </td>
-                <td>
-                    <input type="date" placeholder="Date deposited" name="depositDate">
-                </td>
-                <td>
-                    <button id="saveBtn">Save</button>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
-</section>
+                    </td>
+                    <td>
+                        <input type="date" placeholder="Date deposited" name="depositDate">
+                    </td>
+                    <td>
+                        <button id="saveBtn">Save</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
     </div>
 
 
 
     <script src="functions.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 
 </html>
