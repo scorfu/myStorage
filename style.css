@@ -51,7 +51,7 @@ h1{
 #list th,#list td {
     text-align: left;
     padding: 8px;
-    border: 1px solid beige;
+    border: 1px solid beige; 
 }
   
 #list tr:nth-child(even){background-color: floralwhite}
