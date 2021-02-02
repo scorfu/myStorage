@@ -68,10 +68,11 @@ function addEventListeners() {
 }
 
 function saveObj () {
-    const nameObj = document.querySelector("#list input[name=nameObj]").value;
+    const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]").value;
     const category = document.querySelector("#category option:checked").value;
     const depositArea = document.querySelector("#depositArea option:checked").value;
-    const depositDate = document.querySelector("#list input[name=depositDate]").value;
+    const depositDate = document.querySelector("#staticBackdrop input[name=depositDate]").value;
+
     const obj = {
         nameObj,
         category,
@@ -107,3 +108,4 @@ var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-tog
 var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl)
 })
+
