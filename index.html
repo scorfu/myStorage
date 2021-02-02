@@ -23,11 +23,12 @@
 </head>
 
 <body>
+    <!--Header-->
     <header>
         <div id="header-wraper" class="nav justify-content-between">
             <h1>My Storage</h1>
             <div style="margin-bottom: 5px;">
-                <input type='text' id='search' placeholder="Quick Search" autocomplete="off">
+                <input type='text' id='search' placeholder="Quick Search" name="search" autocomplete="off">
                 <div class="btn-group">
                     <button type="button" class="btn btn-danger dropdown-toggle btn-md" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -46,55 +47,60 @@
                     </ul>
                 </div>
             </div>
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Item</button>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add
+                Item</button>
         </div>
     </header>
-
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Add Item</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Name: <input class="placeholders" type="text" placeholder="Enter name" name="nameObj"><br><br>
-                <form action='#' , name="Category">
-                    <label for="Category">Choose a category:</label>
-                    <select name="Category" id="category">
-                        <option value="Documents">Documents</option>
-                        <option value="Tools">Tools</option>
-                        <option value="Clothes and footwear">Clothes and footwear</option>
-                        <option value="Toys">Toys</option>
-                        <option value="Kitchen appliances">Kitchen appliances</option>
-                        <option value="Tech">Tech</option>
-                        <option value="Summer vacation">Summer vacation</option>
-                        <option value="Winter vacation">Winter vacation</option>
-                        <option value="Others">Others</option>
-                    </select><br><br>
-                    <form action="#" , name="depositArea">
-                        <label for="depositArea">Choose a deposit space:</label>
-                        <select name="depositArea" id="depositArea">
-                            <option value="Living">Living</option>
-                            <option value="Kitchen">Kitchen</option>
-                            <option value="Office">Office</option>
-                            <option value="Hallway">Hallway</option>
-                            <option value="Dormroom">Dormroom</option>
-                            <option value="Garage">Garage</option>
-                            <option value="Attic">Attic</option>
-                            <option value="Basement">Basement</option>
-                            <option value="Others">Others</option>
-                        </select><br><br>
-                        Date: <input class="placeholders" type="date" placeholder="Date deposited" name="depositDate">
+    <!--Modal for add item-->
+    <section>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Add Item</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Name: <input class="placeholders" placeholder="Enter name" name="nameObj"><br><br>
+                        <form action='#' , name="Category">
+                            <label for="Category">Choose a category:</label>
+                            <select name="Category" id="category">
+                                <option value="Documents">Documents</option>
+                                <option value="Tools">Tools</option>
+                                <option value="Clothes and footwear">Clothes and footwear</option>
+                                <option value="Toys">Toys</option>
+                                <option value="Kitchen appliances">Kitchen appliances</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Summer vacation">Summer vacation</option>
+                                <option value="Winter vacation">Winter vacation</option>
+                                <option value="Others">Others</option>
+                            </select><br><br>
+                            <form action="#" , name="depositArea">
+                                <label for="depositArea">Choose a deposit space:</label>
+                                <select name="depositArea" id="depositArea">
+                                    <option value="Living">Living</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Office">Office</option>
+                                    <option value="Hallway">Hallway</option>
+                                    <option value="Dormroom">Dormroom</option>
+                                    <option value="Garage">Garage</option>
+                                    <option value="Attic">Attic</option>
+                                    <option value="Basement">Basement</option>
+                                    <option value="Others">Others</option>
+                                </select><br><br>
+                                Date: <input class="placeholders" type="date" placeholder="Date deposited"
+                                    name="depositDate">
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
                     </div>
-                  </div>
                 </div>
-              </div>
-
+            </div>
+        </div>
+    </section>
+    <!---Table-->
     <section id="content">
         <table id="list">
             <thead>
@@ -111,7 +117,8 @@
             </tfoot>
         </table>
     </section>
-    </div>
+
+
 
 
 

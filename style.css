@@ -92,7 +92,8 @@ html {
 }
 
 .modal-header {
-  background-color: #319197;
+  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d);
+  border-color: black;
   color: #fff;
 }
 
@@ -101,11 +102,12 @@ html {
 }
 
 .modal-body{
-  background-color: #8bc1c4;
+  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d);
 }
 
 .modal-footer {
-  background-color:#319197;
+  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d);
+  border-color: black;
 }
 
 .placeholders {
