@@ -9,7 +9,7 @@ html {
 }
 
 #header-wraper {
-  padding: 20px;
+  padding: 20px 75px 20px 20px;
   width: 100%;
   margin: 0;
   display: flex;
@@ -45,6 +45,19 @@ html {
 	background-color: #b71942;
 	border-color:  #b71942;
 	border-width: .5px;
+}
+
+.btn-info {
+  background-color:#6eb2b6; 
+  border-color: #6eb2b6; 
+  color: #fff;
+}
+
+.btn-info:hover{
+	background-color: #8bc1c4;
+	border-color:  #8bc1c4;
+  border-width: .5px;
+  color: #fff;
 }
 
 header {
