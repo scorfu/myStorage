@@ -1,3 +1,7 @@
+body{
+  font-weight: 600;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -58,6 +62,62 @@ html {
 	border-color:  #8bc1c4;
   border-width: .5px;
   color: #fff;
+}
+
+.btn-secondary {
+  background-color: #b71942;
+	border-color:  #b71942;
+}
+
+.btn-secondary:hover{
+	background-color: #b71942;
+	border-color:  #b71942;
+	border-width: .5px;
+}
+
+.btn-primary {
+  background-color: #41d8ac;
+	border-color:  #41d8ac;
+}
+
+.btn-primary:hover{
+  background-color: #41d8ac;
+	border-color:  #41d8ac;
+	border-width: .5px;
+}
+
+.modal-title {
+  margin-left: 190px;
+ 
+}
+
+.modal-header {
+  background-color: #319197;
+  color: #fff;
+}
+
+.modal-content {
+  border: 0;
+}
+
+.modal-body{
+  background-color: #8bc1c4;
+}
+
+.modal-footer {
+  background-color:#319197;
+}
+
+.placeholders {
+  border-radius: 300px;
+}
+
+#depositArea {
+  border-radius: 300px;
+}
+
+#category {
+  border-radius: 300px;
 }
 
 header {
