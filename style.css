@@ -31,6 +31,22 @@ html {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.btn {
+  border-radius: 300px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #af002d; 
+  border-color:#af002d; 
+}
+
+.btn-danger:hover{
+	background-color: #b71942;
+	border-color:  #b71942;
+	border-width: .5px;
+}
+
 header {
   background:linear-gradient( 
     130deg
