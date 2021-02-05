@@ -92,7 +92,7 @@ html {
 }
 
 .modal-header {
-  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d);
+  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d,#319197);
   border-color: black;
   color: #fff;
 }
@@ -154,7 +154,7 @@ h1{
 #list tr:nth-child(even){background-color: floralwhite}
 
 th {
-    background-color:#ff7a18;
+    background-color:#319197;
     color: white;
   }
   
