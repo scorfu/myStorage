@@ -35,7 +35,7 @@ function getObjHtml(object){
     <td>${object.depositArea}</td>
     <td>${object.depositDate}</td>
     <td>
-        <a href="${API.DELETE.URL}?id=${object.id}">&#128465</a>
+        <a href="${API.DELETE.URL}?id=${object.id}">&#128465;</a>
     <td>
 </tr>`;
 }
@@ -52,6 +52,7 @@ let allObjs = [];
 
 function searchObjs(text) {
     text = text.toLowerCase();
+    console.warn('ai cautat', text);
     return allObjs.filter(obj => {
         return obj.nameObj.toLowerCase().indexOf(text) > -1 ||
             obj.category.toLowerCase().indexOf(text) > -1;
@@ -63,9 +64,13 @@ function addEventListeners() {
     search.addEventListener("input", e => {
         const text = e.target.value;
         const filtrate = searchObjs(text);
+        console.log({ filtrate })
         insertObj(filtrate);
     });
 }
+
+addEventListeners();
+
 
 function saveObj () {
     const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]").value;
@@ -102,7 +107,6 @@ saveBtn.addEventListener("click", () => {
 })
 
 loadList();
-addEventListeners();
 
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
 var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
