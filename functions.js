@@ -2,20 +2,20 @@ console.log('test script')
 
 const API = {
     CREATE: {
-        URL:"create.json",
-        METHOD: "GET"
+        URL:"http://localhost:3000/data-json/create.json",
+        METHOD: "POST"
     },
     READ: {
-        URL:"data.json",
+        URL:"http://localhost:3000/data.json",
         METHOD: "GET"
     },
     UPDATE: {
-        URL:"",
-        METHOD: "GET"
+        URL:"http://localhost:3000/data-json/update.json",
+        METHOD: "PUT"
     },
     DELETE: {
-        URL:"delete.json",
-        METHOD: "GET"
+        URL:"http://localhost:3000/data-json/delete.json",
+        METHOD: "DELETE"
     },
 }
 
@@ -44,6 +44,7 @@ function loadList() {
     fetch(API.READ.URL)
     .then(r => r.json())
     .then(data => {
+        allObjs = data;
         insertObj(data);
     });
 }
@@ -52,6 +53,7 @@ let allObjs = [];
 
 function searchObjs(text) {
     text = text.toLowerCase();
+    console.warn(allObjs);
     return allObjs.filter(obj => {
         return obj.nameObj.toLowerCase().indexOf(text) > -1 ||
             obj.category.toLowerCase().indexOf(text) > -1;
@@ -63,6 +65,7 @@ function addEventListeners() {
     search.addEventListener("input", e => {
         const text = e.target.value;
         const filtrate = searchObjs(text);
+        console.info(filtrate)
         insertObj(filtrate);
     });
 }
@@ -84,6 +87,9 @@ function saveObj () {
 
     fetch(API.CREATE.URL, {
         method: API.CREATE.METHOD,
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: API.CREATE.METHOD === "GET" ? null : JSON.stringify(obj)
     })
         .then(res => res.json())
