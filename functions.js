@@ -53,11 +53,7 @@ let allObjs = [];
 
 function searchObjs(text) {
     text = text.toLowerCase();
-<<<<<<< HEAD
-    console.warn('ai cautat', text);
-=======
     console.warn(allObjs);
->>>>>>> 38a7e57c89bcbe87d534bc0903be8d8551771c0e
     return allObjs.filter(obj => {
         return obj.nameObj.toLowerCase().indexOf(text) > -1 ||
             obj.category.toLowerCase().indexOf(text) > -1;
@@ -69,11 +65,7 @@ function addEventListeners() {
     search.addEventListener("input", e => {
         const text = e.target.value;
         const filtrate = searchObjs(text);
-<<<<<<< HEAD
-        console.log({ filtrate })
-=======
         console.info(filtrate)
->>>>>>> 38a7e57c89bcbe87d534bc0903be8d8551771c0e
         insertObj(filtrate);
     });
 }
