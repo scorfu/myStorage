@@ -19,6 +19,8 @@ const API = {
     },
 }
 
+let editId;
+
 function insertObj(object){
     const tbody = document.querySelector('#list tbody');
     tbody.innerHTML = getObjsHtml(object);
@@ -35,7 +37,8 @@ function getObjHtml(object){
     <td>${object.depositArea}</td>
     <td>${object.depositDate}</td>
     <td>
-        <a href="#" class="delete-row" data-id="${object.id}">&#128465</a>
+        <a href="#" class="delete-row" data-id="${object.id}">&#128465;</a>
+        <a href="#" class="edit-row" data-id="${object.id}">&#9998</a>
     <td>
 </tr>`;
 }
@@ -76,6 +79,12 @@ function addEventListeners() {
             const id = target.getAttribute("data-id")
             console.log("click", id)
             deleteObject(id);
+        } 
+            // start EDIT
+            else if (target.matches("a.edit-row")) {
+            const id = target.getAttribute("data-id");
+            populateObject(id);
+            // end EDIT
         }
     })
 }
@@ -114,6 +123,40 @@ function saveObj () {
         });
 };
 
+// start EDIT
+function updateObj () {
+    const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]").value;
+    const category = document.querySelector("#category option:checked").value;
+    const depositArea = document.querySelector("#depositArea option:checked").value;
+    const depositDate = document.querySelector("#staticBackdrop input[name=depositDate]").value;
+
+    const object = {
+        id: editId,
+        nameObj,
+        category,
+        depositArea,
+        depositDate
+    }
+    console.info("updating", nameObj, category, depositArea, depositDate);
+    console.log(object)
+
+    fetch(API.UPDATE.URL, {
+        method: API.UPDATE.METHOD,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: API.UPDATE.METHOD === "GET" ? null : JSON.stringify(object)
+    })
+        .then(res => res.json())
+        .then(r => {
+            console.warn(r);
+            if (r.success) {
+                loadList();
+            }
+        });
+};
+// end EDIT
+
 function deleteObject (id) {
     fetch(API.DELETE.URL, {
         method: API.DELETE.METHOD,
@@ -129,11 +172,37 @@ function deleteObject (id) {
             }
         });
 }
+// start EDIT
+function populateObject (id) {
+    var object = allObjs.find(object => object.id === id)
+    
+    console.log(object)
+   
+    editId = id;
+
+    const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]");
+    const category = document.querySelector("#category option:checked");
+    const depositArea = document.querySelector("#depositArea option:checked");
+    const depositDate = document.querySelector("#staticBackdrop input[name=depositDate]");
+
+    nameObj.value = object.nameObj;
+    category.value = object.category;
+    depositArea.value = object.depositArea;
+    depositDate.value = object.depositDate;
+
+}
+// end EDIT
 
 const saveBtn = document.querySelector("#saveBtn");
 saveBtn.addEventListener("click", () => {
-    saveObj();
-    
+    //edit
+    if (editId) {
+        updateObj();
+    }
+    //edit
+    else{
+        saveObj();
+    }    
 })
 
 function deleteObj(id) {
