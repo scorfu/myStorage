@@ -110,6 +110,32 @@ saveBtn.addEventListener("click", () => {
     
 })
 
+function deleteObj(id) {
+    fetch(API.DELETE.URL, {
+        method: API.DELETE.METHOD,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ id })
+    })
+        .then(res => res.json())
+        .then(r => {
+            console.warn(r);
+            if (r.success) {
+                loadList();
+            }
+        });
+}
+
+const table = document.querySelector('#list tbody');
+table.addEventListener("click", (e) => {
+    const target = e.target;
+    if (e.target.matches("a.delete-row")) {
+        const id = target.getAttribute("data-id");
+        deleteObj(id)
+    }
+});
+
 loadList();
 
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
