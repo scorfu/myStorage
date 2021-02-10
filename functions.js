@@ -35,7 +35,7 @@ function getObjHtml(object){
     <td>${object.depositArea}</td>
     <td>${object.depositDate}</td>
     <td>
-        <a href="${API.DELETE.URL}?id=${object.id}">&#128465;</a>
+        <a href="${API.DELETE.URL}" class="delete-row" data-id="${object.id}">&#128465;</a>
     <td>
 </tr>`;
 }
