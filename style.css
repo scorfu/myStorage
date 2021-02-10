@@ -76,13 +76,13 @@ html {
 }
 
 .btn-primary {
-  background-color: #41d8ac;
-	border-color:  #41d8ac;
+  background-color: #34ac89;
+	border-color:  #34ac89;
 }
 
 .btn-primary:hover{
-  background-color: #41d8ac;
-	border-color:  #41d8ac;
+  background-color: #34ac89;
+	border-color:  #34ac89;
 	border-width: .5px;
 }
 
@@ -92,9 +92,8 @@ html {
 }
 
 .modal-header {
-  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d,#319197);
+  background: #5ed8cf;
   border-color: black;
-  color: #fff;
 }
 
 .modal-content {
@@ -102,11 +101,11 @@ html {
 }
 
 .modal-body{
-  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d);
+  background: #5ed8cf;
 }
 
 .modal-footer {
-  background: linear-gradient(45deg, #f3b049, #ea7d56, #d4207d);
+  background: #5ed8cf;
   border-color: black;
 }
 
