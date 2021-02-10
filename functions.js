@@ -2,19 +2,19 @@ console.log('test script')
 
 const API = {
     CREATE: {
-        URL:"http://localhost:3000/data-json/create.json",
+        URL:"http://localhost:3000/myStorage-json/create",
         METHOD: "POST"
     },
     READ: {
-        URL:"http://localhost:3000/data.json",
+        URL:"http://localhost:3000/myStorage-json",
         METHOD: "GET"
     },
     UPDATE: {
-        URL:"http://localhost:3000/data-json/update.json",
+        URL:"http://localhost:3000/myStorage-json/update",
         METHOD: "PUT"
     },
     DELETE: {
-        URL:"http://localhost:3000/data-json/delete.json",
+        URL:"http://localhost:3000/myStorage-json/delete",
         METHOD: "DELETE"
     },
 }
@@ -35,7 +35,7 @@ function getObjHtml(object){
     <td>${object.depositArea}</td>
     <td>${object.depositDate}</td>
     <td>
-        <a href="${API.DELETE.URL}?id=${object.id}">&#128465</a>
+        <a href="#" class="delete-row" data-id="${object.id}">&#128465</a>
     <td>
 </tr>`;
 }
@@ -68,6 +68,16 @@ function addEventListeners() {
         console.info(filtrate)
         insertObj(filtrate);
     });
+
+    const table = document.querySelector('#list')
+    table.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.matches("a.delete-row")){
+            const id = target.getAttribute("data-id")
+            console.log("click", id)
+            deleteObject(id);
+        }
+    })
 }
 
 function saveObj () {
@@ -76,21 +86,21 @@ function saveObj () {
     const depositArea = document.querySelector("#depositArea option:checked").value;
     const depositDate = document.querySelector("#staticBackdrop input[name=depositDate]").value;
 
-    const obj = {
+    const object = {
         nameObj,
         category,
         depositArea,
         depositDate
     }
     console.info("saving", nameObj, category, depositArea, depositDate);
-    console.log(obj)
+    console.log(object)
 
     fetch(API.CREATE.URL, {
         method: API.CREATE.METHOD,
         headers: {
             "Content-Type": "application/json"
         },
-        body: API.CREATE.METHOD === "GET" ? null : JSON.stringify(obj)
+        body: API.CREATE.METHOD === "GET" ? null : JSON.stringify(object)
     })
         .then(res => res.json())
         .then(r => {
@@ -100,6 +110,22 @@ function saveObj () {
             }
         });
 };
+
+function deleteObject (id) {
+    fetch(API.DELETE.URL, {
+        method: API.DELETE.METHOD,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ id })
+    })
+        .then(r => r.json())
+        .then(r => {
+            if (r.success) {
+                loadList();
+            }
+        });
+}
 
 const saveBtn = document.querySelector("#saveBtn");
 saveBtn.addEventListener("click", () => {
