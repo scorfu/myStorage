@@ -175,7 +175,7 @@ function deleteObject (id) {
 // start EDIT
 function populateObject (id) {
     var object = allObjs.find(object => object.id === id)
-    
+    alert("Click on add item and update the item");
     console.log(object)
    
     editId = id;
