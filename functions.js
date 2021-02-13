@@ -63,35 +63,6 @@ function searchObjs(text) {
     });
 }
 
-function addEventListeners() {
-    const search = document.getElementById('search');
-    search.addEventListener("input", e => {
-        const text = e.target.value;
-        const filtrate = searchObjs(text);
-        console.info(filtrate)
-        insertObj(filtrate);
-    });
-
-    const table = document.querySelector('#list')
-    table.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target.matches("a.delete-row")){
-            const id = target.getAttribute("data-id")
-            console.log("click", id)
-            deleteObject(id);
-        } 
-            // start EDIT
-            else if (target.matches("a.edit-row")) {
-            const id = target.getAttribute("data-id");
-            populateObject(id);
-            // end EDIT
-        }
-    })
-}
-
-addEventListeners();
-
-
 function saveObj () {
     const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]").value;
     const category = document.querySelector("#category option:checked").value;
@@ -172,6 +143,7 @@ function deleteObject (id) {
             }
         });
 }
+
 // start EDIT
 function populateObject (id) {
     var object = allObjs.find(object => object.id === id)
@@ -193,8 +165,17 @@ function populateObject (id) {
 }
 // end EDIT
 
-const saveBtn = document.querySelector("#saveBtn");
-saveBtn.addEventListener("click", () => {
+function addEventListeners() {
+    const search = document.getElementById('search');
+    search.addEventListener("input", e => {
+        const text = e.target.value;
+        const filtrate = searchObjs(text);
+        console.info(filtrate)
+        insertObj(filtrate);
+    });
+
+    const saveBtn = document.querySelector("#saveBtn");
+    saveBtn.addEventListener("click", () => {
     //edit
     if (editId) {
         updateObj();
@@ -205,31 +186,25 @@ saveBtn.addEventListener("click", () => {
     }    
 })
 
-function deleteObj(id) {
-    fetch(API.DELETE.URL, {
-        method: API.DELETE.METHOD,
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ id })
+    const table = document.querySelector('#list tbody')
+    table.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.matches("a.delete-row")){
+            const id = target.getAttribute("data-id")
+            console.log("click", id)
+            deleteObject(id);
+        } 
+            // start EDIT
+            else if (target.matches("a.edit-row")) {
+            const id = target.getAttribute("data-id");
+            populateObject(id);
+            // end EDIT
+        }
     })
-        .then(res => res.json())
-        .then(r => {
-            console.warn(r);
-            if (r.success) {
-                loadList();
-            }
-        });
 }
 
-const table = document.querySelector('#list tbody');
-table.addEventListener("click", (e) => {
-    const target = e.target;
-    if (e.target.matches("a.delete-row")) {
-        const id = target.getAttribute("data-id");
-        deleteObj(id)
-    }
-});
+addEventListeners();
+
 
 loadList();
 
