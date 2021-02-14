@@ -199,7 +199,7 @@ function addEventListeners() {
             const id = target.getAttribute("data-id");
             populateObject(id);
             // end EDIT  
-        }   
+    }   
     })
 }
 
