@@ -176,15 +176,15 @@ function addEventListeners() {
 
     const saveBtn = document.querySelector("#saveBtn");
     saveBtn.addEventListener("click", () => {
-    //edit
+         //edit
     if (editId) {
         updateObj();
     }
     //edit
     else{
         saveObj();
-    }    
-})
+    }
+    })
 
     const table = document.querySelector('#list tbody')
     table.addEventListener('click', (e) => {
@@ -194,12 +194,12 @@ function addEventListeners() {
             console.log("click", id)
             deleteObject(id);
         } 
-            // start EDIT
-            else if (target.matches("a.edit-row")) {
+         // start EDIT
+        else if (target.matches("a.edit-row")) {
             const id = target.getAttribute("data-id");
             populateObject(id);
-            // end EDIT
-        }
+            // end EDIT  
+        }   
     })
 }
 
