@@ -76,13 +76,13 @@ html {
 }
 
 .btn-primary {
-  background-color: #34ac89;
-	border-color:  #34ac89;
+  background-color: #29896d;
+	border-color:  #29896d;
 }
 
 .btn-primary:hover{
-  background-color: #34ac89;
-	border-color:  #34ac89;
+  background-color: #29896d;
+	border-color:  #29896d;
 	border-width: .5px;
 }
 
