@@ -203,7 +203,7 @@ function addEventListeners() {
     }   
     })
 
-    var input = document.getElementById("staticBackdrop");
+    const input = document.getElementById("staticBackdrop");
     input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
