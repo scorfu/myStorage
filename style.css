@@ -92,7 +92,7 @@ html {
 }
 
 .modal-header {
-  background: #5ed8cf;
+  background: #40abb3;
   border-color: black;
 }
 
@@ -101,11 +101,11 @@ html {
 }
 
 .modal-body{
-  background: #5ed8cf;
+  background: #40abb3;
 }
 
 .modal-footer {
-  background: #5ed8cf;
+  background: #40abb3;
   border-color: black;
 }
 
