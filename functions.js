@@ -2,19 +2,19 @@ console.log('test script')
 
 const API = {
     CREATE: {
-        URL:"http://localhost:3000/myStorage-json/create",
+        URL:"http://localhost:3000/myStorage/create",
         METHOD: "POST"
     },
     READ: {
-        URL:"http://localhost:3000/myStorage-json",
+        URL:"http://localhost:3000/myStorage", //for connecting to .json update all CRUD to -json: eg. myStorage-json/create; myStorage-json; myStorage-json/update, etc
         METHOD: "GET"
     },
     UPDATE: {
-        URL:"http://localhost:3000/myStorage-json/update",
+        URL:"http://localhost:3000/myStorage/update",
         METHOD: "PUT"
     },
     DELETE: {
-        URL:"http://localhost:3000/myStorage-json/delete",
+        URL:"http://localhost:3000/myStorage/delete",
         METHOD: "DELETE"
     },
 }
@@ -148,6 +148,7 @@ function deleteObject (id) {
 function populateObject (id) {
     var object = allObjs.find(object => object.id === id)
     alert("Click on add item and update the item");
+
     console.log(object)
    
     editId = id;
