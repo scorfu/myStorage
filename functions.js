@@ -222,3 +222,6 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl)
 })
 
+$('#staticBackdrop').on('hidden.bs.modal', function () {
+    $(this).find('form').trigger('reset');
+});
