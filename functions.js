@@ -146,9 +146,10 @@ function deleteObject (id) {
 
 // start EDIT
 function populateObject (id) {
-    var object = allObjs.find(object => object.id === id)
-    alert("Click on add item and update the item");
+    console.log('id', id)
+    var object = allObjs.find(object => object.id == id)
 
+    console.log(allObjs)
     console.log(object)
    
     editId = id;
@@ -162,7 +163,9 @@ function populateObject (id) {
     category.value = object.category;
     depositArea.value = object.depositArea;
     depositDate.value = object.depositDate;
-
+    
+    var myModal = document.getElementById("staticBackdrop")
+    myModal.addEventListener("click", () => { return document.getElementsByClassName('modal fade show')})
 }
 // end EDIT
 
