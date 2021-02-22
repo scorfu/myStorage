@@ -10,6 +10,6 @@ Storage micro app
 - [x] Did page style
 - [x] Did dropdown button filter
 - [ ] Need to make dropdown filter work
-- [ ] Need to make edit button work
+- [x] Need to make edit button work
 - [ ] Need to make the date look good
 - [ ] Need to repair the table
