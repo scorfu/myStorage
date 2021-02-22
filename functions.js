@@ -39,7 +39,7 @@ function getObjHtml(object){
     <td>
         <a href="#" class="delete-row" data-id="${object.id}">&#128465;</a>
         <a href="#" class="edit-row" data-id="${object.id}">&#9998</a>
-    <td>
+    </td>
 </tr>`;
 }
 
