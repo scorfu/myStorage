@@ -146,10 +146,8 @@ function deleteObject (id) {
 
 // start EDIT
 function populateObject (id) {
-    console.log('id', id)
     var object = allObjs.find(object => object.id == id)
-
-    console.log(allObjs)
+    $('#staticBackdrop').modal('show')
     console.log(object)
    
     editId = id;
@@ -201,6 +199,7 @@ function addEventListeners() {
          // start EDIT
         else if (target.matches("a.edit-row")) {
             const id = target.getAttribute("data-id");
+
             populateObject(id);
             // end EDIT  
     }   
