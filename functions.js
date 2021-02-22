@@ -161,7 +161,9 @@ function populateObject (id) {
     category.value = object.category;
     depositArea.value = object.depositArea;
     depositDate.value = object.depositDate;
-
+    
+    var myModal = document.getElementById("staticBackdrop")
+    myModal.addEventListener("click", () => { return document.getElementsByClassName('modal fade show')})
 }
 // end EDIT
 
