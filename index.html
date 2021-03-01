@@ -27,7 +27,8 @@
             <div style="margin-bottom: 5px;">
                 <input type='text' id='search' placeholder="Quick Search" name="search" autocomplete="off">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle btn-md" data-bs-toggle="dropdown"
+                    <!-- start filter button-->
+                    <!-- <button type="button" class="btn btn-danger dropdown-toggle btn-md" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Filter
                     </button>
@@ -41,7 +42,27 @@
                         <li><a class="dropdown-item" href="#">Summer vacation</a></li>
                         <li><a class="dropdown-item" href="#">Winter vacation</a></li>
                         <li><a class="dropdown-item" href="#">Others</a></li>
-                    </ul>
+                    </ul> -->
+                    <!-- end filter button-->
+
+
+                    <!-- start of Category Search button-->
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Category Filter</button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href='#' value="Documents" class="category">Documents</a>
+                          <a href='#' value="Tools" class="category">Tools</a>
+                          <a href='#' value="Clothes and footwear" class="category">Clothes and footwear</a>
+                          <a href='#' value="Kitchen appliances" class="category">Kitchen appliances</a>
+                          <a href='#' value="Tech" class="category">Tech</a>
+                          <a href='#' value="Summer vacation" class="category">Summer vacation</a>
+                          <a href='#' value="Winter vacation" class="category">Winter vacation</a>
+                          <a href='#' value="Others" class="category">Others</a>
+                        </div>
+                      </div>
+                    <!-- end of Category Search button-->
+
+
                 </div>
             </div>
             <!--Modal for add item-->

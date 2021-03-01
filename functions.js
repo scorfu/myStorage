@@ -33,7 +33,7 @@ function getObjsHtml(object){
 function getObjHtml(object){
     return  `<tr>
     <td>${object.nameObj}</td>
-    <td>${object.category}</td>
+    <td value="${object.category}" class="category">${object.category}</td>
     <td>${object.depositArea}</td>
     <td>${object.depositDate}</td>
     <td>
@@ -227,3 +227,37 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 $('#staticBackdrop').on('hidden.bs.modal', function () {
     $(this).find('form').trigger('reset');
 });
+
+
+// start of Category Seach button
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+function listenForCategory () {
+    let category = document.querySelector (".dropdown-content")
+    category.addEventListener("click", (e) => {
+        const target = e.target
+        console.log("click", target)
+
+        if (target.matches("a.category")) {
+            const catg = target.getAttribute("value")
+            console.log("value is:", catg)
+
+        }
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+    for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+    
+
+    })
+}
+listenForCategory();
+
+  // end of Category Seach button
