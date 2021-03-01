@@ -2,36 +2,40 @@ console.log('test script')
 
 const API = {
     CREATE: {
-        URL:"http://localhost:3000/myStorage/create",
+        URL: "http://localhost:3000/myStorage/create",
         METHOD: "POST"
     },
     READ: {
-        URL:"http://localhost:3000/myStorage", //for connecting to .json update all CRUD to -json: eg. myStorage-json/create; myStorage-json; myStorage-json/update, etc
+        URL: "http://localhost:3000/myStorage", //for connecting to .json update all CRUD to -json: eg. myStorage-json/create; myStorage-json; myStorage-json/update, etc
         METHOD: "GET"
     },
     UPDATE: {
-        URL:"http://localhost:3000/myStorage/update",
+        URL: "http://localhost:3000/myStorage/update",
         METHOD: "PUT"
     },
     DELETE: {
-        URL:"http://localhost:3000/myStorage/delete",
+        URL: "http://localhost:3000/myStorage/delete",
         METHOD: "DELETE"
     },
 }
 
 let editId;
 
-function insertObj(object){
+function insertObj(list) {
     const tbody = document.querySelector('#list tbody');
-    tbody.innerHTML = getObjsHtml(object);
+    if (list.length) {
+        tbody.innerHTML = getObjsHtml(list);
+    } else {
+        tbody.innerHTML = getNotFoundRow();
+    }
 }
 
-function getObjsHtml(object){
+function getObjsHtml(object) {
     return object.map(getObjHtml).join("");
 }
 
-function getObjHtml(object){
-    return  `<tr>
+function getObjHtml(object) {
+    return `<tr>
     <td>${object.nameObj}</td>
     <td value="${object.category}" class="category">${object.category}</td>
     <td>${object.depositArea}</td>
@@ -43,13 +47,17 @@ function getObjHtml(object){
 </tr>`;
 }
 
+function getNotFoundRow() {
+    return `<tr><td>Not Found!</td></tr>`
+}
+
 function loadList() {
     fetch(API.READ.URL)
-    .then(r => r.json())
-    .then(data => {
-        allObjs = data;
-        insertObj(data);
-    });
+        .then(r => r.json())
+        .then(data => {
+            allObjs = data;
+            insertObj(data);
+        });
 }
 
 let allObjs = [];
@@ -63,7 +71,7 @@ function searchObjs(text) {
     });
 }
 
-function saveObj () {
+function saveObj() {
     const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]").value;
     const category = document.querySelector("#category option:checked").value;
     const depositArea = document.querySelector("#depositArea option:checked").value;
@@ -95,7 +103,7 @@ function saveObj () {
 };
 
 // start EDIT
-function updateObj () {
+function updateObj() {
     const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]").value;
     const category = document.querySelector("#category option:checked").value;
     const depositArea = document.querySelector("#depositArea option:checked").value;
@@ -128,11 +136,11 @@ function updateObj () {
 };
 // end EDIT
 
-function deleteObject (id) {
+function deleteObject(id) {
     fetch(API.DELETE.URL, {
         method: API.DELETE.METHOD,
         headers: {
-          "Content-Type": "application/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({ id })
     })
@@ -145,11 +153,11 @@ function deleteObject (id) {
 }
 
 // start EDIT
-function populateObject (id) {
+function populateObject(id) {
     var object = allObjs.find(object => object.id == id)
     $('#staticBackdrop').modal('show')
     console.log(object)
-   
+
     editId = id;
 
     const nameObj = document.querySelector("#staticBackdrop input[name=nameObj]");
@@ -161,9 +169,9 @@ function populateObject (id) {
     category.value = object.category;
     depositArea.value = object.depositArea;
     depositDate.value = object.depositDate;
-    
+
     var myModal = document.getElementById("staticBackdrop")
-    myModal.addEventListener("click", () => { return document.getElementsByClassName('modal fade show')})
+    myModal.addEventListener("click", () => { return document.getElementsByClassName('modal fade show') })
 }
 // end EDIT
 
@@ -172,46 +180,55 @@ function addEventListeners() {
     search.addEventListener("input", e => {
         const text = e.target.value;
         const filtrate = searchObjs(text);
-        console.info(filtrate)
-        insertObj(filtrate);
+        console.info({filtrate})
+        insertObj(text ? filtrate : allObjs);
     });
 
     const saveBtn = document.querySelector("#saveBtn");
     saveBtn.addEventListener("click", () => {
-         //edit
-    if (editId) {
-        updateObj();
-    }
-    //edit
-    else{
-        saveObj();
-    }
+        //edit
+        if (editId) {
+            updateObj();
+        }
+        //edit
+        else {
+            saveObj();
+        }
     })
 
     const table = document.querySelector('#list tbody')
     table.addEventListener('click', (e) => {
         const target = e.target;
-        if (target.matches("a.delete-row")){
+        if (target.matches("a.delete-row")) {
             const id = target.getAttribute("data-id")
             console.log("click", id)
             deleteObject(id);
-        } 
-         // start EDIT
+        }
+        // start EDIT
         else if (target.matches("a.edit-row")) {
             const id = target.getAttribute("data-id");
 
             populateObject(id);
             // end EDIT  
-    }   
+        }
     })
 
     const input = document.getElementById("staticBackdrop");
-    input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("saveBtn").click();
-  }
-});
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("saveBtn").click();
+        }
+    });
+
+    const categories = document.querySelectorAll('.category');
+    categories.forEach(a => a.addEventListener('click', function () {
+        const text =  a.getAttribute("value");
+        const filtrate = searchObjs(text);
+        console.info({filtrate})
+        insertObj(filtrate);
+    })
+    )
 }
 
 addEventListeners();
@@ -221,7 +238,7 @@ loadList();
 
 var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
 var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-  return new bootstrap.Dropdown(dropdownToggleEl)
+    return new bootstrap.Dropdown(dropdownToggleEl)
 })
 
 $('#staticBackdrop').on('hidden.bs.modal', function () {
@@ -232,32 +249,6 @@ $('#staticBackdrop').on('hidden.bs.modal', function () {
 // start of Category Seach button
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
-  }
-
-function listenForCategory () {
-    let category = document.querySelector (".dropdown-content")
-    category.addEventListener("click", (e) => {
-        const target = e.target
-        console.log("click", target)
-
-        if (target.matches("a.category")) {
-            const catg = target.getAttribute("value")
-            console.log("value is:", catg)
-
-        }
-
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-    for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-    
-
-    })
 }
-listenForCategory();
 
   // end of Category Seach button
