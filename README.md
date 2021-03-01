@@ -14,7 +14,7 @@ Web app that let you store your items by Category, Room, Name and Date
 - [x] Did header
 - [x] Did page style
 - [x] Did dropdown button filter
-- [ ] Need to make dropdown filter work with JS
+- [x] Need to make dropdown filter work with JS
 - [x] Need to make edit button work
 - [x] Need to make the date look good
 - [x] Need to repair the table
