@@ -2,11 +2,15 @@
 Storage micro app
 Web app that let you store your items by Category, Room, Name and Date
 
+## Live Preview
+
+- [Demo](https://scorfu.github.io/myStorage/)
+
 ## Features
-- [] Search by Name and Category
-- [] Deposit by Room, Category, Date
-- [] Modify, update and add items
-- [] Add/ edit form has a fresh start after every modification
+- [ ] Search by Name and Category
+- [ ] Deposit by Room, Category, Date
+- [ ] Modify, update and add items
+- [ ] Add/ edit form has a fresh start after every modification
 ## TO DOs
 - [x] Create table and import data from data base
 - [x] Add modal for add item
