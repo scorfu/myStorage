@@ -19,6 +19,11 @@ const API = {
     },
 }
 
+// for demo purposes...
+if (true || location.host === "scorfu.github.io") {
+    API.READ.URL = "data.json";
+}
+
 let editId;
 
 function insertObj(list) {
