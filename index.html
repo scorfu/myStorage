@@ -27,29 +27,11 @@
             <div style="margin-bottom: 5px;">
                 <input type='text' id='search' placeholder="Quick Search" name="search" autocomplete="off">
                 <div class="btn-group">
-                    <!-- start filter button-->
-                    <!-- <button type="button" class="btn btn-danger dropdown-toggle btn-md" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Filter
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Documents</a></li>
-                        <li><a class="dropdown-item" href="#">Tools</a></li>
-                        <li><a class="dropdown-item" href="#">Clothes and footwear</a></li>
-                        <li><a class="dropdown-item" href="#">Toys</a></li>
-                        <li><a class="dropdown-item" href="#">Kitchen appliances</a></li>
-                        <li><a class="dropdown-item" href="#">Tech</a></li>
-                        <li><a class="dropdown-item" href="#">Summer vacation</a></li>
-                        <li><a class="dropdown-item" href="#">Winter vacation</a></li>
-                        <li><a class="dropdown-item" href="#">Others</a></li>
-                    </ul> -->
-                    <!-- end filter button-->
-
-
                     <!-- start of Category Search button-->
                     <div class="dropdown">
                         <button onclick="myFunction()" class="dropbtn"> Filter </button>
                         <div id="myDropdown" class="dropdown-content">
+                            <input id="reset" onclick="reset()" type="button" value=" x ">
                           <a href='#' value="Documents" class="category">Documents</a>
                           <a href='#' value="Tools" class="category">Tools</a>
                           <a href='#' value="Clothes and footwear" class="category">Clothes and footwear</a>

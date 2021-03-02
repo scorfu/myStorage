@@ -257,3 +257,12 @@ function myFunction() {
 }
 
   // end of Category Seach button
+
+ function reset(){
+    const resetBtn = document.querySelectorAll('#myDropdown');
+    resetBtn.forEach(a => a.addEventListener('click', function () {
+        const resetButton =  a.getAttribute("value" === "x");
+        console.log('resetButton')
+    })
+    )
+ }

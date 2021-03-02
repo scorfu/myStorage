@@ -193,14 +193,29 @@ td input {
   min-width: 230px;
   border: 1px solid #ddd;
   z-index: 1;
+  border-radius: 8px;
 }
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 6px 8px;
   text-decoration: none;
   display: block;
-  background-color: floralwhite;
+  background-color: whitesmoke;
+}
+
+.dropdown-content a:hover{
+  background-color: white;
+}
+
+.dropdown-content input {
+  border-radius: 130px;
+  font-weight: bold;
+  font-size: 12px;
+  padding : 0px 3px 1px 3px;
+  float: right;
+  border-width: 1.9px; 
+  border-style: solid;
 }
 
 .show {display:block;}
