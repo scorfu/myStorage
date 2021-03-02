@@ -276,14 +276,15 @@ window.onclick = function(event) {
   // end of Category Seach button
 
  function reset(){
-    const resetBtn = document.querySelectorAll('#myDropdown');
+    const resetBtn = document.querySelectorAll('#reset');
     resetBtn.forEach(a => a.addEventListener('click', function () {
         const resetButton =  a.getAttribute("value" === "x");
         console.log('resetButton')
+        loadList()
     })
     )
  }
 
- function hideMemberDetails() {
-    $('#main-sidebar').hide("slow");
-}
+//  function hideMemberDetails() {
+//     $('#main-sidebar').hide("slow");
+// }
