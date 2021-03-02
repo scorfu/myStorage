@@ -170,7 +170,7 @@ td input {
 .dropbtn {
   background-color: #af002d;
   color: white;
-  padding: 8px 16px 8px 16px;
+  padding: 6px 16px 6px 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -191,7 +191,7 @@ td input {
   position: absolute;
   background-color: #f6f6f6;
   min-width: 230px;
-  border: 1px solid #ddd;
+  border: 5px solid #f6f6f6;
   z-index: 1;
   border-radius: 8px;
 }
@@ -209,13 +209,15 @@ td input {
 }
 
 .dropdown-content input {
-  border-radius: 130px;
+  border-radius: 50%;
   font-weight: bold;
   font-size: 12px;
-  padding : 0px 3px 1px 3px;
+  padding : 0px 3px 2px 3px;
   float: right;
   border-width: 1.9px; 
   border-style: solid;
+  text-align: center;
+  background-color: white;
 }
 
 .show {display:block;}
