@@ -234,6 +234,10 @@ function addEventListeners() {
         insertObj(filtrate);
     })
     )
+
+    document.getElementById("myDropdown").addEventListener('click',function(event){
+        event.stopPropagation();
+    });
 }
 
 addEventListeners();
@@ -269,11 +273,6 @@ window.onclick = function(event) {
       }
     }
   }
-
-  document.getElementById("myDropdown").addEventListener('click',function(event){
-    event.stopPropagation();
-});
-
   // end of Category Seach button
 
  function reset(){
@@ -285,3 +284,6 @@ window.onclick = function(event) {
     )
  }
 
+ function hideMemberDetails() {
+    $('#main-sidebar').hide("slow");
+}
