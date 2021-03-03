@@ -226,24 +226,27 @@ function addEventListeners() {
         }
     });
 
+    const popupElment = document.querySelector('.dropdown-content');
     const categories = document.querySelectorAll('.category');
     categories.forEach(a => a.addEventListener('click', function () {
         const text = a.getAttribute("value");
         const filtrate = searchObjs(text);
         console.info({ filtrate })
         insertObj(filtrate);
+        popupElment.classList.remove('show');
     })
-    )
+    );
 
     document.getElementById("myDropdown").addEventListener('click', function (event) {
         event.stopPropagation();
     });
 
-    var popupEl = document.querySelector('.dropdown-content');
-    var button = document.querySelector('.close');
+    const popupEl = document.querySelector('.dropdown-content');
+    const button = document.querySelector('.close');
     button.addEventListener('click', function () {
         popupEl.classList.remove('show');
     });
+
 }
 
 addEventListeners();
