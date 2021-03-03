@@ -20,9 +20,9 @@ const API = {
 }
 
 // for demo purposes...
-if (true || location.host === "scorfu.github.io") {
+/*if (true || location.host === "scorfu.github.io") {
     API.READ.URL = "data.json";
-}
+}*/
 
 let editId;
 
@@ -185,7 +185,7 @@ function addEventListeners() {
     search.addEventListener("input", e => {
         const text = e.target.value;
         const filtrate = searchObjs(text);
-        console.info({filtrate})
+        console.info({ filtrate })
         insertObj(text ? filtrate : allObjs);
     });
 
@@ -228,15 +228,21 @@ function addEventListeners() {
 
     const categories = document.querySelectorAll('.category');
     categories.forEach(a => a.addEventListener('click', function () {
-        const text =  a.getAttribute("value");
+        const text = a.getAttribute("value");
         const filtrate = searchObjs(text);
-        console.info({filtrate})
+        console.info({ filtrate })
         insertObj(filtrate);
     })
     )
 
-    document.getElementById("myDropdown").addEventListener('click',function(event){
+    document.getElementById("myDropdown").addEventListener('click', function (event) {
         event.stopPropagation();
+    });
+
+    var popupEl = document.querySelector('.dropdown-content');
+    var button = document.querySelector('.close');
+    button.addEventListener('click', function () {
+        popupEl.classList.remove('show');
     });
 }
 
@@ -260,31 +266,27 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
-  
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
-  // end of Category Seach button
 
- function reset(){
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+// end of Category Seach button
+
+function reset() {
     const resetBtn = document.querySelectorAll('#reset');
     resetBtn.forEach(a => a.addEventListener('click', function () {
-        const resetButton =  a.getAttribute("value" === "x");
+        const resetButton = a.getAttribute("value" === "x");
         console.log('resetButton')
         loadList()
     })
     )
- }
-
-//  function hideMemberDetails() {
-//     $('#main-sidebar').hide("slow");
-// }
+}
