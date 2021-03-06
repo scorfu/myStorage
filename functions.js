@@ -20,9 +20,9 @@ const API = {
 }
 
 // for demo purposes...
-if (true || location.host === "scorfu.github.io") {
+/*if (true || location.host === "scorfu.github.io") {
     API.READ.URL = "data.json";
-}
+}*/
 
 let editId;
 
@@ -185,7 +185,7 @@ function addEventListeners() {
     search.addEventListener("input", e => {
         const text = e.target.value;
         const filtrate = searchObjs(text);
-        console.info({filtrate})
+        console.info({ filtrate })
         insertObj(text ? filtrate : allObjs);
     });
 
@@ -226,18 +226,27 @@ function addEventListeners() {
         }
     });
 
+    const popupElment = document.querySelector('.dropdown-content');
     const categories = document.querySelectorAll('.category');
     categories.forEach(a => a.addEventListener('click', function () {
-        const text =  a.getAttribute("value");
+        const text = a.getAttribute("value");
         const filtrate = searchObjs(text);
-        console.info({filtrate})
+        console.info({ filtrate })
         insertObj(filtrate);
+        popupElment.classList.remove('show');
     })
-    )
+    );
 
-    document.getElementById("myDropdown").addEventListener('click',function(event){
+    document.getElementById("myDropdown").addEventListener('click', function (event) {
         event.stopPropagation();
     });
+
+    const popupEl = document.querySelector('.dropdown-content');
+    const button = document.querySelector('.close');
+    button.addEventListener('click', function () {
+        popupEl.classList.remove('show');
+    });
+
 }
 
 addEventListeners();
@@ -267,15 +276,15 @@ function hide () {
 window.onclick = function(event) {
 
     if (!event.target.matches('.dropbtn')) {
-  
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
         }
-      }
     }
   }
 
@@ -288,16 +297,12 @@ window.onclick = function(event) {
 
   // end of Category Seach button
 
- function reset(){
+function reset() {
     const resetBtn = document.querySelectorAll('#reset');
     resetBtn.forEach(a => a.addEventListener('click', function () {
-        const resetButton =  a.getAttribute("value" === "x");
+        const resetButton = a.getAttribute("value" === "x");
         console.log('resetButton')
         loadList()
     })
     )
- }
-
-//  function hideMemberDetails() {
-//     $('#main-sidebar').hide("slow");
-// }
+}
