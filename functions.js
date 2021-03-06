@@ -269,9 +269,11 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-function hide () {
-    document.getElementById("myDropdown").classList.remove("show")
-}
+//  the below can be used as another option to remove the dropdown list when clicking on option, you will also need to add an onclick="hide()" in html
+// function hide () {
+//     document.getElementById("myDropdown").classList.remove("show")
+// }
+//  the below can be used as another option to remove the dropdown list when clicking on option, you will also need to add an onclick="hide()" in html
 
 window.onclick = function(event) {
 
@@ -287,13 +289,6 @@ window.onclick = function(event) {
         }
     }
   }
-
-  
-
-//   const opts = document.querySelectorAll(".category")
-// if (event.target.matches(opt)) {
-//     document.getElementsByClassName("dropdown-content").classList.remove('show')
-// }
 
   // end of Category Seach button
 
