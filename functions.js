@@ -260,7 +260,12 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
+function hide () {
+    document.getElementById("myDropdown").classList.remove("show")
+}
+
 window.onclick = function(event) {
+
     if (!event.target.matches('.dropbtn')) {
   
       var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -273,6 +278,14 @@ window.onclick = function(event) {
       }
     }
   }
+
+  
+
+//   const opts = document.querySelectorAll(".category")
+// if (event.target.matches(opt)) {
+//     document.getElementsByClassName("dropdown-content").classList.remove('show')
+// }
+
   // end of Category Seach button
 
  function reset(){
