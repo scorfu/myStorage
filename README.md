@@ -28,3 +28,14 @@ Web app that let you store your items by Category, Room, Name and Date
 - Corfu Sergiu - [GitHub](https://github.com/scorfu)
 - Ștefania Popa - [GitHub](https://github.com/stefaniapopa)
 - Stanca Știrb - [GitHub](https://github.com/StancaMaria)
+
+
+##### Start app
+
+- in Xampp - start Apache , MySQL
+- open [node-api-myStorage](https://github.com/scorfu/node-api-mystorage) folder in Visual Studio
+- open terminal and run: `npm run devstart`/ `npm start`
+- open [myStorage](https://github.com/scorfu/myStorage) folder in Visual Studio
+- Press Shift+Ctrl+P - Browser Sync: Server mode in browser
+- Press * + Enter
+- localhost:80 - phpMyAdmin (for database)
