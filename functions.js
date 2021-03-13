@@ -53,7 +53,7 @@ function getObjHtml(object) {
 }
 
 function getNotFoundRow() {
-    return `<tr><td>Not Found!</td></tr>`
+    return `<tr><td colspan="5" style="text-align:center"><h4>Not Found!</h4></td></tr>`
 }
 
 function loadList() {
@@ -180,6 +180,35 @@ function populateObject(id) {
 }
 // end EDIT
 
+//show member details in main side-bar
+function showObjDetails(id) {
+    var object = allObjs.find(object => object.id == id)
+    console.log(object, allObjs, id)
+
+    const nameObjAside = document.getElementById("nameObjAside");
+    const categoryAside = document.getElementById("categoryAside");
+    const depositAreaAside = document.getElementById("depositAreaAside");
+    const depositDateAside = document.getElementById("depositDateAside");
+    const delEdit = document.querySelector('delEdit')
+
+    nameObjAside.value = object.nameObj;
+    categoryAside.value = object.category;
+    depositAreaAside.value = object.depositArea;
+    depositDateAside.value = object.depositDate;
+  
+
+    var editDel = ` <a href="#" class="delete-row" data-id="${object.id}">&#128465;</a>
+                    <a href="#" class="edit-row" data-id="${object.id}">&#9998</a>`
+
+    
+    
+    
+    
+    delEdit.innerHTML.value = editDel;
+                
+    $('#main-sidebar').show('slow');
+}
+
 function addEventListeners() {
     const search = document.getElementById('search');
     search.addEventListener("input", e => {
@@ -247,6 +276,10 @@ function addEventListeners() {
         popupEl.classList.remove('show');
     });
 
+    $('#list tbody').on('click', 'tr', function (e) {
+        showObjDetails();
+    });
+
 }
 
 addEventListeners();
@@ -275,7 +308,7 @@ function myFunction() {
 // }
 //  the below can be used as another option to remove the dropdown list when clicking on option, you will also need to add an onclick="hide()" in html
 
-window.onclick = function(event) {
+window.onclick = function (event) {
 
     if (!event.target.matches('.dropbtn')) {
 
@@ -288,9 +321,9 @@ window.onclick = function(event) {
             }
         }
     }
-  }
+}
 
-  // end of Category Seach button
+// end of Category Seach button
 
 function reset() {
     const resetBtn = document.querySelectorAll('#reset');
@@ -301,3 +334,12 @@ function reset() {
     })
     )
 }
+
+
+//$('tbody').on("click", 'tr', showObjDetails);
+
+function hideObjDetails() {
+    $('#main-sidebar').hide("slow");
+}
+
+//$('#main-sidebar').hide();

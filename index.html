@@ -14,7 +14,7 @@
     <!--Bootstrap link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    
+
     <!--Our css stylesheet-->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -32,16 +32,16 @@
                         <button onclick="myFunction()" class="dropbtn"> Filter </button>
                         <div id="myDropdown" class="dropdown-content">
                             <input id="reset" onclick="reset()" type="button" value=" x " class="close">
-                          <a href='#' value="Documents" class="category">Documents</a>
-                          <a href='#' value="Tools" class="category">Tools</a>
-                          <a href='#' value="Clothes and footwear" class="category">Clothes and footwear</a>
-                          <a href='#' value="Kitchen appliances" class="category">Kitchen appliances</a>
-                          <a href='#' value="Tech" class="category">Tech</a>
-                          <a href='#' value="Summer vacation" class="category">Summer vacation</a>
-                          <a href='#' value="Winter vacation" class="category">Winter vacation</a>
-                          <a href='#' value="Others" class="category">Others</a>
+                            <a href='#' value="Documents" class="category">Documents</a>
+                            <a href='#' value="Tools" class="category">Tools</a>
+                            <a href='#' value="Clothes and footwear" class="category">Clothes and footwear</a>
+                            <a href='#' value="Kitchen appliances" class="category">Kitchen appliances</a>
+                            <a href='#' value="Tech" class="category">Tech</a>
+                            <a href='#' value="Summer vacation" class="category">Summer vacation</a>
+                            <a href='#' value="Winter vacation" class="category">Winter vacation</a>
+                            <a href='#' value="Others" class="category">Others</a>
                         </div>
-                      </div>
+                    </div>
                     <!-- end of Category Search button-->
 
 
@@ -64,20 +64,21 @@
                     <div class="modal-body">
                         <form>
                             <label>Name:</label>
-                            <input class="placeholders" placeholder="Enter name" name="nameObj"><br><br>
-                        <form action='#' , name="Category">
-                            <label for="Category">Choose a category:</label>
-                            <select name="Category" id="category">
-                                <option value="Documents">Documents</option>
-                                <option value="Tools">Tools</option>
-                                <option value="Clothes and footwear">Clothes and footwear</option>
-                                <option value="Toys">Toys</option>
-                                <option value="Kitchen appliances">Kitchen appliances</option>
-                                <option value="Tech">Tech</option>
-                                <option value="Summer vacation">Summer vacation</option>
-                                <option value="Winter vacation">Winter vacation</option>
-                                <option value="Others">Others</option>
-                            </select><br><br>
+                            <input id="nameObj" class="placeholders" placeholder="Enter name" name="nameObj"><br><br>
+                            <form action='#' , name="Category">
+                                <label for="Category">Choose a category:</label>
+                                <select name="Category" id="category">
+                                    <option value="Documents">Documents</option>
+                                    <option value="Tools">Tools</option>
+                                    <option value="Clothes and footwear">Clothes and footwear</option>
+                                    <option value="Toys">Toys</option>
+                                    <option value="Kitchen appliances">Kitchen appliances</option>
+                                    <option value="Tech">Tech</option>
+                                    <option value="Summer vacation">Summer vacation</option>
+                                    <option value="Winter vacation">Winter vacation</option>
+                                    <option value="Others">Others</option>
+                                </select><br><br>
+                            </form>
                             <form action="#" , name="depositArea">
                                 <label for="depositArea">Choose a deposit space:</label>
                                 <select name="depositArea" id="depositArea">
@@ -92,10 +93,9 @@
                                     <option value="Others">Others</option>
                                 </select><br><br>
                                 <label> Date:</label>
-                                <input class="placeholders" type="date" placeholder="Date deposited"
-                                    name="depositDate">
-
-                                </form>
+                                <input id="depositDate" class="placeholders" type="date" placeholder="Date deposited" name="depositDate">
+                            </form>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -105,32 +105,61 @@
             </div>
         </div>
     </section>
-    <!---Table-->
-    <section id="content">
-        <table id="list">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Deposit Area</th>
-                    <th>Date deposited</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-            <tfoot>
-            </tfoot>
-        </table>
-    </section>
+
+    <div class="container">
+        <div class="page-wrap">
+
+            <!---Table-->
+            <section id="content">
+                <table id="list">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Deposit Area</th>
+                            <th>Date deposited</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <aside id="main-sidebar">
+                <div id="close" onclick="hideObjDetails()" title="close">+</div>
+                <h2><span id="nameObjAside"></span></h2>
+
+                <div id="obj-details">
+                    <ul>
+                        <li><strong>Category: </strong><span id="categoryAside"></span></li>
+                        <li><strong>Deposit Area: </strong><span id="depositAreaAside"></span></li>
+                        <li><strong>Deposit Date: </strong> <span id="depositDateAside"></span></li>
+                    </ul>
+                </div>
+                </div>
+                <div id="delEdit"></div>
 
 
+            </aside>
+
+        </div>
+    </div>
 
 
 
     <!--Bootstrap link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
 
     <!--jQuery link-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
