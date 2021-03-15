@@ -243,7 +243,7 @@ function addEventListeners() {
         const filtrate = searchObjs(search.value, category);
         console.info({ filtrate })
         insertObj(filtrate);
-        document.querySelector('.dropbtn').innerHTML = category;
+        document.querySelector('.dropbtn').innerHTML = `Filter: ${category}`;
         popupElment.classList.remove('show');
     })
     );
