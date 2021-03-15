@@ -40,7 +40,7 @@ function getObjsHtml(object) {
 }
 
 function getObjHtml(object) {
-    return `<tr>
+    return `<tr data-id="${object.id}">
     <td>${object.nameObj}</td>
     <td value="${object.category}" class="category">${object.category}</td>
     <td>${object.depositArea}</td>
@@ -180,34 +180,6 @@ function populateObject(id) {
 }
 // end EDIT
 
-//show member details in main side-bar
-function showObjDetails(id) {
-    var object = allObjs.find(object => object.id == id)
-    console.log(object, allObjs, id)
-
-    const nameObjAside = document.getElementById("nameObjAside");
-    const categoryAside = document.getElementById("categoryAside");
-    const depositAreaAside = document.getElementById("depositAreaAside");
-    const depositDateAside = document.getElementById("depositDateAside");
-    const delEdit = document.querySelector('delEdit')
-
-    nameObjAside.value = object.nameObj;
-    categoryAside.value = object.category;
-    depositAreaAside.value = object.depositArea;
-    depositDateAside.value = object.depositDate;
-  
-
-    var editDel = ` <a href="#" class="delete-row" data-id="${object.id}">&#128465;</a>
-                    <a href="#" class="edit-row" data-id="${object.id}">&#9998</a>`
-
-    
-    
-    
-    
-    delEdit.innerHTML.value = editDel;
-                
-    $('#main-sidebar').show('slow');
-}
 
 function addEventListeners() {
     const search = document.getElementById('search');
@@ -241,9 +213,15 @@ function addEventListeners() {
         // start EDIT
         else if (target.matches("a.edit-row")) {
             const id = target.getAttribute("data-id");
-
             populateObject(id);
+            console.log(id)
             // end EDIT  
+        }
+        else if (target.tagName != 'TR') {
+            console.log('click')
+            const id = target.getAttribute("data-id");
+            showObjDetails(id);
+            console.log(id)
         }
     })
 
@@ -275,11 +253,6 @@ function addEventListeners() {
     button.addEventListener('click', function () {
         popupEl.classList.remove('show');
     });
-
-    $('#list tbody').on('click', 'tr', function (e) {
-        showObjDetails();
-    });
-
 }
 
 addEventListeners();
@@ -334,12 +307,3 @@ function reset() {
     })
     )
 }
-
-
-//$('tbody').on("click", 'tr', showObjDetails);
-
-function hideObjDetails() {
-    $('#main-sidebar').hide("slow");
-}
-
-//$('#main-sidebar').hide();
