@@ -66,13 +66,15 @@ function loadList() {
 }
 
 let allObjs = [];
+let searchCategory = "";
 
-function searchObjs(text) {
+function searchObjs(text, category) {
     text = text.toLowerCase();
     console.warn(allObjs);
     return allObjs.filter(obj => {
-        return obj.nameObj.toLowerCase().indexOf(text) > -1 ||
-            obj.category.toLowerCase().indexOf(text) > -1;
+        return (obj.nameObj.toLowerCase().indexOf(text) > -1 ||
+            obj.category.toLowerCase().indexOf(text) > -1) && 
+            (category ? obj.category === category : true);
     });
 }
 
@@ -185,7 +187,7 @@ function addEventListeners() {
     const search = document.getElementById('search');
     search.addEventListener("input", e => {
         const text = e.target.value;
-        const filtrate = searchObjs(text);
+        const filtrate = searchObjs(text, searchCategory);
         console.info({ filtrate })
         insertObj(text ? filtrate : allObjs);
     });
@@ -236,8 +238,9 @@ function addEventListeners() {
     const popupElment = document.querySelector('.dropdown-content');
     const categories = document.querySelectorAll('.category');
     categories.forEach(a => a.addEventListener('click', function () {
-        const text = a.getAttribute("value");
-        const filtrate = searchObjs(text);
+        const category = a.getAttribute("value");
+        searchCategory = category;
+        const filtrate = searchObjs(search.value, category);
         console.info({ filtrate })
         insertObj(filtrate);
         popupElment.classList.remove('show');
