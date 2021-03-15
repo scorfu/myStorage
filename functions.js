@@ -243,6 +243,7 @@ function addEventListeners() {
         const filtrate = searchObjs(search.value, category);
         console.info({ filtrate })
         insertObj(filtrate);
+        document.querySelector('.dropbtn').innerHTML = category;
         popupElment.classList.remove('show');
     })
     );
@@ -306,6 +307,7 @@ function reset() {
     resetBtn.forEach(a => a.addEventListener('click', function () {
         const resetButton = a.getAttribute("value" === "x");
         console.log('resetButton')
+        document.querySelector('.dropbtn').innerHTML = "Filter"
         loadList()
     })
     )
