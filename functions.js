@@ -20,9 +20,9 @@ const API = {
 }
 
 // for demo purposes...
-/*if (true || location.host === "scorfu.github.io") {
+if (location.host === "scorfu.github.io") {
     API.READ.URL = "data.json";
-}*/
+}
 
 let editId;
 
